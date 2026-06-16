@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blogging Master</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111827;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:#ff6b00;
+}
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("https://picsum.photos/1920/1080");
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:20px;
+}
+
+.btn{
+    background:#ff6b00;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.section{
+    padding:80px 10%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card img{
+    width:100%;
+}
+
+.card h3{
+    padding:15px;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+.about-box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.contact-form{
+    max-width:600px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+}
+
+.contact-form button{
+    width:100%;
+}
+
+.dark{
+    background:#121212;
+    color:white;
+}
+
+.dark .card,
+.dark .about-box{
+    background:#1e1e1e;
+    color:white;
+}
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.dark-btn{
+    background:#ff6b00;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Blogging Master</div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <button class="dark-btn" id="darkMode">🌙</button>
+</header>
+
+<section id="home" class="hero">
+    <div>
+        <h1>Welcome To Blogging Master</h1>
+        <p>Learn Blogging, SEO, Affiliate Marketing & Online Business.</p>
+        <button class="btn" onclick="scrollToBlogs()">Explore Blogs</button>
+    </div>
+</section>
+
+<section id="blogs" class="section">
+    <h2>Latest Blogs</h2>
+
+    <div class="blog-grid">
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?1">
+            <h3>SEO Guide</h3>
+            <p>Learn powerful SEO techniques to improve rankings.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?2">
+            <h3>Affiliate Marketing</h3>
+            <p>Generate passive income through affiliate programs.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?3">
+            <h3>Content Writing</h3>
+            <p>Create engaging content that attracts visitors.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?4">
+            <h3>Google Updates</h3>
+            <p>Stay updated with the latest algorithm changes.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Us</h2>
+
+    <div class="about-box">
+        <p>
+            Blogging Master is a professional blogging platform where you can
+            learn SEO, Blogging, Google Ranking, Affiliate Marketing and
+            Content Creation strategies.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+
+    <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button class="btn">Send Message</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Blogging Master | All Rights Reserved</p>
+</footer>
+
+<script>
+function scrollToBlogs(){
+    document.getElementById("blogs").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+document.getElementById("darkMode").addEventListener("click",function(){
+    document.body.classList.toggle("dark");
+});
+</script>
+
+</body>
+</html>
