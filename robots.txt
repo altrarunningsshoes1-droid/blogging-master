@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://altrarunningsshoes1-droid.github.io/blogging-master/sitemap.xml
